@@ -19,3 +19,28 @@ function causeStackOverflow() {
 }
 
 // causeStackOverflow();
+
+// Use the try/catch event method to avoid infinity loops
+
+// try {
+//     causeStackOverflow();
+// } catch (error) {
+//     console.log("Part 1: Stack Overflow Result");
+//     console.log("Error message:", error.message);
+//     console.log("The function called itself this many times:", stackCounter);
+
+//     causeStackOverflow(); 
+// }
+
+// Aboce code will cause an infinity loop
+try {
+    causeStackOverflow();
+} catch (error) {
+    console.log("Part 1: Stack Overflow Result");
+    console.log("Error message:", error.message);
+    console.log("The function called itself this many times:", stackCounter);
+
+ 
+    // This shows the full error object if I want to inspect it.
+    // console.log(error);
+}
